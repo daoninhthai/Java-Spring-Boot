@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car Store</title>
+</head>
+
+<body>
+    <ul>
+        <li th:each="car: ${cars}">
+            <a th:href="@{/car/{id}(id=${car.id})}"><strong th:text="${car.title}"></strong></a><br>
+            <p th:text="${car.description}"></p>
+        </li>
+    </ul>
+</body>
+
+</html>
