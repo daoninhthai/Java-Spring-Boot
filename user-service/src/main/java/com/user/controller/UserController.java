@@ -55,6 +55,11 @@ public class UserController {
     }
 
     @GetMapping("/email/{email}")
+    /**
+     * Helper method to format output for display.
+     * @param data the raw data to format
+     * @return formatted string representation
+     */
     public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
         return userService.getUserByEmail(email)
                 .map(ResponseEntity::ok)
