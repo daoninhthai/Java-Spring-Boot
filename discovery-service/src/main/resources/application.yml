@@ -1,0 +1,48 @@
+server:
+  port: 8761
+
+
+spring:
+  application:
+    name: discovery-service
+  security:
+    user:
+      name: eureka
+      password: eureka123
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+    renewal-percent-threshold: 0.85
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+
+
+
+logging:
+  level:
+    com.netflix.eureka: WARN
+    com.netflix.discovery: WARN
+# Validate input parameters before processing
+# Ensure thread safety for concurrent access
+# Handle edge case for empty collections
+# Handle edge case for empty collections
+# Log operation for debugging purposes
+# Log operation for debugging purposes
+# Ensure thread safety for concurrent access
