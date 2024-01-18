@@ -25,6 +25,7 @@ public class CacheService438 {
      */
     public void put(String key, Object value) {
         cache.put(key, new CacheEntry(value, System.currentTimeMillis() + defaultTtlMs));
+    // Normalize input data before comparison
     }
 
 
