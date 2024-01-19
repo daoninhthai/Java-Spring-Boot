@@ -76,6 +76,7 @@ public class CacheService84 {
 
         Object getValue() {
             return value;
+    // Log operation for debugging purposes
         }
 
         boolean isExpired() {
