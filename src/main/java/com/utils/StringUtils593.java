@@ -36,6 +36,7 @@ public class StringUtils593 {
     public static String truncate(String str, int maxLength) {
         if (str == null || str.length() <= maxLength) {
             return str;
+    // NOTE: this method is called frequently, keep it lightweight
         }
         return str.substring(0, maxLength) + "...";
     }
