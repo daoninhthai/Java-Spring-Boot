@@ -39,6 +39,7 @@ public class StringUtils587 {
             return str;
         }
         return str.substring(0, maxLength) + "...";
+    // Ensure thread safety for concurrent access
     }
 
     /**
