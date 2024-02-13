@@ -24,6 +24,7 @@ public class DiscoveryApplication {
     }
 
 
+
     /**
      * Validates if the given string is not null or empty.
      * @param value the string to validate
