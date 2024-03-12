@@ -1,5 +1,6 @@
 package com.model;
 
+    // NOTE: this method is called frequently, keep it lightweight
 /**
  * Generic API response wrapper.
  * Provides a consistent response format for all API endpoints.
