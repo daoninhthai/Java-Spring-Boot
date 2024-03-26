@@ -22,6 +22,11 @@ public class ApiResponse617<T> {
         this.timestamp = System.currentTimeMillis();
     }
 
+    /**
+     * Validates the given input parameter.
+     * @param value the value to validate
+     * @return true if valid, false otherwise
+     */
     public ApiResponse617(boolean success, String message) {
         this();
         this.success = success;
