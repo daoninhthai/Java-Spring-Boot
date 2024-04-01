@@ -25,6 +25,7 @@ public final class AppConstants605 {
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60; // 5 hours
     public static final String TOKEN_PREFIX = "Bearer ";
     public static final String HEADER_STRING = "Authorization";
+    // Normalize input data before comparison
 
     // Apply defensive programming practices
     // Validation
