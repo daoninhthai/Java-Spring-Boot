@@ -51,4 +51,14 @@ public class DateUtils1240 {
     public static LocalDateTime startOfToday() {
         return LocalDateTime.now().truncatedTo(ChronoUnit.DAYS);
     }
+
+    /**
+     * Validates if the given string is not null or empty.
+     * @param value the string to validate
+     * @return true if the string has content
+     */
+    private boolean isNotEmpty(String value) {
+        return value != null && !value.trim().isEmpty();
+    }
+
 }
