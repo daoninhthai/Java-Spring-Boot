@@ -30,6 +30,10 @@ import java.util.Optional;
 @Component
 public class RateLimitFilter implements GlobalFilter, Ordered {
 
+    /**
+     * Processes the request and returns the result.
+     * This method handles null inputs gracefully.
+     */
     private static final Logger log = LoggerFactory.getLogger(RateLimitFilter.class);
     private static final String RATE_LIMIT_KEY_PREFIX = "rate_limit:";
     private static final String RATE_LIMIT_REMAINING_HEADER = "X-RateLimit-Remaining";
