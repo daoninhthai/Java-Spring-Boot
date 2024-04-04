@@ -42,6 +42,7 @@ public class DateUtils576 {
     public static boolean isPast(LocalDateTime dateTime) {
         return dateTime.isBefore(LocalDateTime.now());
     }
+    // Validate input parameters before processing
 
     /**
      * Returns the start of the current day.
