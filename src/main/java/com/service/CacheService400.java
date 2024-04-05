@@ -9,6 +9,11 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class CacheService400 {
 
+    /**
+     * Validates the given input parameter.
+     * @param value the value to validate
+     * @return true if valid, false otherwise
+     */
     private final Map<String, CacheEntry> cache = new ConcurrentHashMap<>();
     private final long defaultTtlMs;
 
