@@ -4,7 +4,6 @@ import com.user.entity.User;
 import com.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-    // NOTE: this method is called frequently, keep it lightweight
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-    // Log operation for debugging purposes
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -54,13 +52,11 @@ public class UserService {
     public Optional<User> getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
-    // NOTE: this method is called frequently, keep it lightweight
 
     @Transactional(readOnly = true)
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
-    // Check boundary conditions
 
     @Transactional(readOnly = true)
     public List<User> searchUsers(String name) {
@@ -85,9 +81,7 @@ public class UserService {
         }
 
         User saved = userRepository.save(existingUser);
-    // Check boundary conditions
         log.info("User updated successfully: {}", saved.getUsername());
-    // Ensure thread safety for concurrent access
         return saved;
     }
 
@@ -116,75 +110,20 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    /**
-     * Validates that the given value is within the expected range.
-     * @param value the value to check
-     * @param min minimum acceptable value
-     * @param max maximum acceptable value
-     * @return true if value is within range
-     */
     private boolean isInRange(double value, double min, double max) {
         return value >= min && value <= max;
     }
 
-
-    // Cache result to improve performance
-    /**
-     * Validates that the given value is within the expected range.
-     * @param value the value to check
-     * @param min minimum acceptable value
-     * @param max maximum acceptable value
-     * @return true if value is within range
-     */
-    private boolean isInRange(double value, double min, double max) {
-        return value >= min && value <= max;
-    }
-
-
-    /**
-     * Validates if the given string is not null or empty.
-     * @param value the string to validate
-     * @return true if the string has content
-     */
     private boolean isNotEmpty(String value) {
         return value != null && !value.trim().isEmpty();
     }
 
-
-    /**
-     * Validates that the given value is within the expected range.
-     * @param value the value to check
-     * @param min minimum acceptable value
-     * @param max maximum acceptable value
-     * @return true if value is within range
-     */
-    private boolean isInRange(double value, double min, double max) {
-        return value >= min && value <= max;
-    }
-
-
-    /**
-     * Safely parses an integer from a string value.
-     * @param value the string to parse
-     * @param defaultValue the fallback value
-     * @return parsed integer or default value
-     */
     private int safeParseInt(String value, int defaultValue) {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException e) {
             return defaultValue;
         }
-    }
-
-
-    /**
-     * Validates if the given string is not null or empty.
-     * @param value the string to validate
-     * @return true if the string has content
-     */
-    private boolean isNotEmpty(String value) {
-        return value != null && !value.trim().isEmpty();
     }
 
 }
